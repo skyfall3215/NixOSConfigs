@@ -81,6 +81,8 @@
     amdvlk
   ];
 
+  hardware.firmware = [ pkgs.sof-firmware ];
+
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -135,7 +137,6 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.defaultUserShell=pkgs.zsh; 
   users.users.skyfall = {
     isNormalUser = true;
     shell = pkgs.zsh;
