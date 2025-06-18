@@ -154,15 +154,26 @@
     autosuggestions.enable = true;
     zsh-autoenv.enable = true;
     syntaxHighlighting.enable = true;
+    shellAliases = {
+	ls = "lsd";
+	rebuild = "sudo nixos-rebuild switch";
+	collect-garbage = "sudo nix-collect-garbage -d";
+	conf = "sudo vim /etc/nixos/configuration.nix";
+    };
     ohMyZsh = {
       enable = true;
       plugins = [
         "git"
     ];
-    custom = "$HOME/.oh-my-zsh/custom/";
-    theme = "powerlevel10k/powerlevel10k";
+    	custom = "$HOME/.oh-my-zsh/custom/";
+   	theme = "powerlevel10k/powerlevel10k";
     };
   };
+  
+  # Ubuntu nerd fonts
+  fonts.packages = with pkgs; [
+    nerd-fonts.ubuntu-mono
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -179,6 +190,10 @@
     obs-studio
     git
     tldr
+    prismlauncher
+    lsd
+    bat
+    qbittorrent
   ];
 
   # Open ports in the firewall.
