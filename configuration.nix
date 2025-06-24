@@ -46,6 +46,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  boot.kernelParams = [ "regdom=TR" ];
 
   # Set your time zone.
   time.timeZone = "Europe/Istanbul";
@@ -102,6 +103,9 @@
   # Enable Zram
   zramSwap.enable = true;
 
+  # Enable flatpak
+  services.flatpak.enable = true;
+  
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -194,6 +198,7 @@
     lsd
     bat
     qbittorrent
+    google-chrome
   ];
 
   # Open ports in the firewall.
